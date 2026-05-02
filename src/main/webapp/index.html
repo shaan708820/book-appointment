@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Book Your Appointment</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>📅 Book an Appointment</h1>
+                <p>Schedule your visit with us in just a few clicks</p>
+            </div>
+
+            <form id="appointmentForm" class="card-body">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Type</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a service --</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="checkup">Routine Check-up</option>
+                        <option value="followup">Follow-up Visit</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Anything we should know?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Book Appointment</button>
+            </form>
+
+            <div id="successMessage" class="success-message hidden">
+                <div class="checkmark">✓</div>
+                <h2>Appointment Confirmed!</h2>
+                <p id="confirmationDetails"></p>
+                <button class="btn-secondary" onclick="resetForm()">Book Another</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
